@@ -1,0 +1,18 @@
+<p-card>
+    <ng-template pTemplate="header">
+        <p class="pl-3 pt-2" style="font-weight: bold">
+            {{ name() }}
+        </p>
+    </ng-template>
+    <div class="flex justify-content-center align-content-center">
+        <img [ngSrc]="image()" width="200" height="200">
+    </div>
+    <p>
+        {{ description() }}
+    </p>
+    <ng-template pTemplate="footer">
+        <p>
+            Learn more!
+        </p>
+    </ng-template>
+</p-card>
