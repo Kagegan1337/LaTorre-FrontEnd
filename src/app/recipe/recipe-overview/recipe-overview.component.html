@@ -1,0 +1,6 @@
+<div
+    class="grid"
+>
+    <app-recipe *ngFor="let recipe of recipes"
+                 class="col-12" [recipe]="recipe" (showDetails)="showRecipeDetails(recipe)"></app-recipe>
+</div>

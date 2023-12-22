@@ -1,18 +1,17 @@
 import {Component} from '@angular/core';
 import {ArticleComponent} from "../components/aritcle/article.component";
-import {NgForOf} from "@angular/common";
 import {CategoryComponent} from "../components/category/category.component";
-import {CategoryMockService} from "../indata/category-mock.service";
 import {CategoryDto} from "../model/category-dto";
 import {CategoryServiceService} from "../service/category-service.service";
+import {NgForOf} from "@angular/common";
 
 @Component({
     selector: 'app-categories-page',
     standalone: true,
     imports: [
         ArticleComponent,
-        NgForOf,
-        CategoryComponent
+        CategoryComponent,
+        NgForOf
     ],
     templateUrl: './categories-page.component.html',
     styleUrl: './categories-page.component.scss'

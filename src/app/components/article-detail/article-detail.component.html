@@ -1,0 +1,54 @@
+<p-card
+    [style]="{'border':'solid 1px gray'} "
+>
+    <ng-template pTemplate="header">
+        <p class="pl-3" style="font-weight:bold; font-size: 1.125rem">
+            {{ name() }}
+        </p>
+    </ng-template>
+    <div>
+        <div class="grid">
+            <p-galleria [value]="images()" [showThumbnails]="false"
+                        [showItemNavigators]="true"
+                        [circular]="true"
+                        class="col-6"
+            >
+                <ng-template pTemplate="item" let-item>
+                    <img [src]="item" style="width: 60%; display: block; background: rgba(97,93,93,0.53)"/>
+                </ng-template>
+            </p-galleria>
+            <div class="col-6">
+                <p>
+                    Variationen
+                </p>
+                <p-dropdown
+                    (onChange)="onChanged($event)"
+                    [options]="dropdownOptions()"
+                    optionLabel="type"
+                    appendTo="body"
+                    placeholder="Variation wählen"
+                    [style]="{'width': '100%'}"
+                >
+
+                </p-dropdown>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="col-12">
+                <p>
+                    {{ description() }}
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <ng-template pTemplate="footer">
+        <div class="flex flex-wrap justify-content-between align-content-center">
+            <p-button pRipple class="success">Zur Einkaufsliste hinzufügen</p-button>
+            <p>
+                {{ getFormattedPrice() }}
+            </p>
+        </div>
+
+    </ng-template>
+</p-card>

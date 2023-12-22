@@ -1,7 +1,9 @@
 export interface ArticleDto {
-    name : string,
-    description: string,
-    category: string,
-    price: number,
-    imageUrl: string
+    articleId: number;
+    name : string;
+    description: string;
+    category: string;
+    price: number;
+    imageUrl: string;
+    sizes: string[];
 }

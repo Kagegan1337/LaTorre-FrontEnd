@@ -1,8 +1,9 @@
 <p-card
-    [style]="{'border':'solid 1px gray'} "
+    class="latorre-card"
+    (click)="emitDetails()"
 >
     <ng-template pTemplate="header">
-        <p class="ml-2 mt-2" style="font-weight: bold">
+        <p class="pt-2 pl-3 headline">
             {{ name() }}
         </p>
     </ng-template>
@@ -13,8 +14,12 @@
         {{ description() }}
     </p>
     <ng-template pTemplate="footer">
-        <p>
-            {{ price() }}
-        </p>
+        <div class="flex flex-wrap justify-content-between align-content-between">
+            <p-button class="latorre-button">Learn more!</p-button>
+            <p>
+                {{ price() }}
+            </p>
+        </div>
+
     </ng-template>
 </p-card>

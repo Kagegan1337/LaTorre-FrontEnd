@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {RouterOutlet} from "@angular/router";
+import {Router, RouterOutlet} from "@angular/router";
 import {MegaMenuModule} from "primeng/megamenu";
 import {MegaMenuItem} from "primeng/api";
 import {InputMaskModule} from "primeng/inputmask";
@@ -25,11 +25,13 @@ export class NavigationComponent {
 
     navigation: MegaMenuItem[] | undefined;
 
+    constructor(private router: Router) {
+    }
+
     ngOnInit() {
         this.navigation = [
             {
                 label: 'Spezialitäten',
-                routerLink: "categories",
                 items: [
                     [
                         {
@@ -42,16 +44,25 @@ export class NavigationComponent {
                                 },
                                 {
                                     label: 'Fisch',
-                                    disabled: true
+                                    routerLink: 'articles',
+                                    queryParams: ['sea']
                                 },
                                 {
                                     label: 'Gemüse',
-                                    disabled: true
+                                    routerLink: 'articles',
+                                    queryParams: ['veggi']
                                 },
                                 {
                                     label: 'Saucen',
-                                    disabled: true
-                                }
+                                    routerLink: 'articles',
+                                    queryParams: ['souce']
+                                },
+                                {
+                                    label: 'Tiefkühl',
+                                    routerLink: 'articles',
+                                    queryParams: ['frozen']
+                                },
+
                             ]
                         },
                         {
@@ -59,11 +70,13 @@ export class NavigationComponent {
                             items: [
                                 {
                                     label: 'Rotwein',
-                                    disabled: true
+                                    routerLink: 'articles',
+                                    queryParams: ['wine', 'red']
                                 },
                                 {
                                     label: 'Weißwein',
-                                    disabled: true
+                                    routerLink: 'articles',
+                                    queryParams: ['wine', 'white']
                                 }
                             ]
                         },
@@ -103,38 +116,31 @@ export class NavigationComponent {
                 ]
             },
             {
-                label: "Protigisische Heimat",
+                label: "Cozinha Portuguesa",
                 items: [
                     [
                         {
-                            label: "Vegetarisch",
+                            label: "Rezepte",
                             items: [
                                 {
-                                    label: "Vegetarisch-1",
+                                    label: "Fleisch",
+                                    routerLink: 'recipe',
+                                    queryParams: ['meat']
+                                },
+                                {
+                                    label: "Fisch",
                                     disabled: true
                                 },
                                 {
-                                    label: "Vegetarisch-2",
+                                    label: "Fisch",
                                     disabled: true
                                 },
                                 {
-                                    label: "Vegetarisch-3",
-                                    disabled: true
-                                },
-                                {
-                                    label: "Vegetarisch-4",
+                                    label: "Vegetarisch",
                                     disabled: true
                                 }
                             ]
-                        },
-                        {
-                            label: "Fleisch",
-                            disabled: true
-                        },
-                        {
-                            label: "Fisch",
-                            disabled: true
-                        },
+                        }
                     ],
                     [
                         {
@@ -171,12 +177,12 @@ export class NavigationComponent {
                         }
                     ]
                 ]
-            },
-            {
-                label: ""
             }
 
         ];
     }
 
+    loadMain() {
+        this.router.navigate([''])
+    }
 }

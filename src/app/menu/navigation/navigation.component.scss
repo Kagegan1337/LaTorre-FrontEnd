@@ -3,3 +3,13 @@
         background: red;
     }
 }
+
+.la-torre-header {
+    border-radius: 0.25rem;
+    background: var(--latorre-primary);
+    & .latorre-image {
+        border: 2px white solid;
+        border-radius: 0.25rem;
+        cursor:pointer;
+    }
+}

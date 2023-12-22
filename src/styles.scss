@@ -1,0 +1,15 @@
+:root {
+    --latorre-primary:#9a141b;
+    --latorre-primary-shadow: rgba(154, 20, 27, 0.71);
+}
+
+html, body {
+    font-size: 1.125rem;
+}
+
+.center-border {
+    border: 1px solid gray;
+    border-radius: 0.25rem;
+    box-shadow:0.225rem 0.225rem var(--latorre-primary);
+}
+

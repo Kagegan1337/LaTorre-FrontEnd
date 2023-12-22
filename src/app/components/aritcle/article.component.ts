@@ -1,20 +1,23 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output, signal} from '@angular/core';
 import {CardModule} from "primeng/card";
 import {NgOptimizedImage} from "@angular/common";
 import {ArticleDto} from "../../model/article-dto";
+import {ButtonModule} from "primeng/button";
 
 @Component({
   selector: 'app-aritcle',
   standalone: true,
     imports: [
         CardModule,
-        NgOptimizedImage
+        NgOptimizedImage,
+        ButtonModule
     ],
   templateUrl: './article.component.html',
   styleUrl: './article.component.scss'
 })
 export class ArticleComponent {
     @Input() article: ArticleDto = {} as ArticleDto;
+    @Output() showDetails : EventEmitter<void> = new EventEmitter<void>
 
     public getFormattedPrice() {
         return this.article.price.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
@@ -41,4 +44,7 @@ export class ArticleComponent {
     }
 
 
+    emitDetails() {
+        this.showDetails.emit();
+    }
 }

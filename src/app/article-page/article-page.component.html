@@ -2,8 +2,17 @@
     class="grid"
 >
     <app-aritcle *ngFor="let article of articles"
-                 class="sm:col-12 md:col-9 lg:col-6 xl:col-3" [article]="article"></app-aritcle>
+                 class="sm:col-12 md:col-9 lg:col-6 xl:col-3" [article]="article" (showDetails)="showArticleDetails(article)"></app-aritcle>
 </div>
 <p-dialog [(visible)]="showLoading">
     <app-loading></app-loading>
+</p-dialog>
+<p-dialog
+    [(visible)]="showArticle"
+    [modal]="true"
+    (onHide)="closeArticleDetails()"
+    [draggable]="false"
+    [style]="{'width':'45vw'}"
+>
+    <app-article-detail #articleDetailsDialog></app-article-detail>
 </p-dialog>
