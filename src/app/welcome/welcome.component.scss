@@ -1,0 +1,28 @@
+.bg-container{
+    background-image: url("/assets/img/landing_2.jpg");
+    background-size: cover;
+}
+
+.la-torre-circle{
+    height: 400px;
+    width: 400px;
+    //border-radius: 50%;
+    background: rgba(16, 16, 16, 0.17);
+    z-index: 1;
+}
+
+:host ::ng-deep .p-button {
+    background: var(--latorre-primary);
+    border: 1px solid var(--latorre-primary);
+    transition: background-color 0.75s ease, border-color 0.75s ease, color 0.75s ease;
+    border-radius: 0;
+    width: 180px;
+    text-align: center;
+    display: block;
+}
+
+:host ::ng-deep .p-button:hover {
+    background-color: var(--latorre-primary-text-100);
+    border-color: var(--latorre-primary-text-100);
+    color: white;
+}

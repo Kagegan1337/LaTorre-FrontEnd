@@ -1,10 +1,15 @@
+@import "primeicons/primeicons.css";
+
 :root {
-    --latorre-primary:#9a141b;
+    --latorre-primary: rgb(154, 20, 27);
     --latorre-primary-shadow: rgba(154, 20, 27, 0.71);
+    --latorre-primary-text-100: #9c9d9f;
 }
 
 html, body {
     font-size: 1.125rem;
+    height:100%;
+    margin:0;
 }
 
 .center-border {
@@ -12,4 +17,3 @@ html, body {
     border-radius: 0.25rem;
     box-shadow:0.225rem 0.225rem var(--latorre-primary);
 }
-

@@ -36,7 +36,10 @@
                             "primeng/resources/themes/lara-light-blue/theme.css",
                             "primeng/resources/primeng.css"
                         ],
-                        "scripts": []
+                        "scripts": [],
+                        "stylePreprocessorOptions": {
+                            "includePaths": [""]
+                        }
                     },
                     "configurations": {
                         "production": {

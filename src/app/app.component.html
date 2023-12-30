@@ -1,6 +1,5 @@
-<div>
-    <app-navigation></app-navigation>
-    <div class="flex justify-content-center align-content-center pt-5 m-auto w-9">
-        <router-outlet></router-outlet>
-    </div>
+<app-navigation *ngIf="showNavigation()"></app-navigation>
+<app-welcome *ngIf="!showNavigation()"></app-welcome>
+<div class="flex justify-content-center align-items-center w-9 px-8rem">
+    <router-outlet *ngIf="showNavigation()"></router-outlet>
 </div>

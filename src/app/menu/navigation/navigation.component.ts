@@ -39,7 +39,7 @@ export class NavigationComponent {
                             items: [
                                 {
                                     label: 'Fleisch',
-                                    routerLink: 'articles',
+                                    routerLink: '/articles',
                                     queryParams: ['meat']
                                 },
                                 {
@@ -183,6 +183,6 @@ export class NavigationComponent {
     }
 
     loadMain() {
-        this.router.navigate([''])
+        this.router.navigate(['main'])
     }
 }
