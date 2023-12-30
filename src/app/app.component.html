@@ -1,5 +1,11 @@
 <app-navigation *ngIf="showNavigation()"></app-navigation>
 <app-welcome *ngIf="!showNavigation()"></app-welcome>
-<div class="flex justify-content-center align-items-center w-9 px-8rem">
-    <router-outlet *ngIf="showNavigation()"></router-outlet>
+<div class="grid pt-3">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <router-outlet *ngIf="showNavigation()"></router-outlet>
+    </div>
+    <div class="col-1"></div>
 </div>
+
+
