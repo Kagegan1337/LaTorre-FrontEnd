@@ -20,15 +20,22 @@ export class ArticleComponent {
     @Output() showDetails : EventEmitter<void> = new EventEmitter<void>
 
     public getFormattedPrice() {
-        return this.article.price.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
+        return this.article.pooling.at(0)?.price.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
     }
 
     public name() {
-        return this.checkDto() ? this.article.name : "Fallback-article";
+        return this.checkDto() ? this.article.names.at(0) : "Fallback-article";
     }
 
     public image() {
-        return this.checkDto() ? this.article.imageUrl : "";
+        if(this.checkDto()){
+            const path = this.article.images.at(0)?.path
+            if(path) {
+                return path;
+            }
+
+        }
+        return "";
     }
 
     public description() {
