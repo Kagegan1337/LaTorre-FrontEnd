@@ -3,6 +3,10 @@ export interface ArticleDto {
     names : TranslationDto[];
     description: TranslationDto[];
     images: ImagesDto[];
+}
+
+export interface ArticleDetailsDto{
+
     pooling: PoolingDto[];
 }
 

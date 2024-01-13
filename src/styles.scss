@@ -9,7 +9,9 @@
 html, body {
     font-size: 1.125rem;
     height:100%;
+    width: 100%;
     margin:0;
+    overflow-x: hidden;
 }
 
 .center-border {

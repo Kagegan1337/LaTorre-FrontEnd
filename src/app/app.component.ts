@@ -22,7 +22,6 @@ export class AppComponent {
   }
 
     showNavigation() {
-      console.log(this.router.url)
-      return this.router.url !== "/"
+      return this.router.url !== "/";
     }
 }

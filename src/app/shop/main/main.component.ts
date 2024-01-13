@@ -17,8 +17,4 @@ import {ButtonModule} from "primeng/button";
   styleUrl: './main.component.scss'
 })
 export class MainComponent {
-
-    navigateToShop() {
-
-    }
 }

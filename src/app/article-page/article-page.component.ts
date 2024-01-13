@@ -44,7 +44,7 @@ export class ArticlePageComponent {
                 this.showLoading = true;
                 this.loadArticles(category).subscribe({
                     next: value => {
-                        console.log(value);
+                        console.log(value)
                         this.articles = value;
                         this.showLoading = false;
                     },

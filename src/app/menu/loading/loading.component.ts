@@ -11,6 +11,6 @@ import {ProgressSpinnerModule} from "primeng/progressspinner";
   styleUrl: './loading.component.scss'
 })
 export class LoadingComponent {
-    type: string = "";
+    type: string = "Date";
 
 }

@@ -19,9 +19,9 @@ export class ArticleComponent {
     @Input() article: ArticleDto = {} as ArticleDto;
     @Output() showDetails : EventEmitter<void> = new EventEmitter<void>
 
-    public getFormattedPrice() {
-        return this.article.pooling.at(0)?.price.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
-    }
+    // public getFormattedPrice() {
+    //     return this.article.pooling.at(0)?.price.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
+    // }
 
     public name() {
         return this.checkDto() ? this.article.names.at(0) : "Fallback-article";
@@ -42,9 +42,9 @@ export class ArticleComponent {
         return this.checkDto() ? this.article.description : "fallback-description"
     }
 
-    public price() {
-        return this.checkDto() ? this.getFormattedPrice() : "N/A"
-    }
+    // public price() {
+    //     return this.checkDto() ? this.getFormattedPrice() : "N/A"
+    // }
 
     private checkDto() {
         return this.article !== undefined && this.article !== null;
