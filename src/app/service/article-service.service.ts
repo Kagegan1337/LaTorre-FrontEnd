@@ -4,6 +4,7 @@ import {ArticleMockService} from "../indata/article-mock.service";
 import {ArticleDetailsMockService} from "../indata/article-details-mock.service";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {ArticleDto} from "../model/article-dto";
+import {ArticleDetailsDto} from "../model/article-details-dto";
 
 @Injectable({
     providedIn: 'root'
@@ -24,6 +25,6 @@ export class ArticleServiceService {
     }
 
     loadArticleDetails(articleId: number) {
-        return this.articleDetailsMock.loadDetailsForId()
+        return this.http.get<ArticleDetailsDto>(this.backendUrl+`/article/${articleId}`)
     }
 }

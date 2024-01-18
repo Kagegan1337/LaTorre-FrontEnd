@@ -1,8 +1,10 @@
 export interface ArticleDto {
     articleId: number;
-    names : TranslationDto[];
-    description: TranslationDto[];
-    images: ImagesDto[];
+    name: string;
+    description: string;
+    category: string;
+    subCategory: string;
+    thumbnail:string;
 }
 
 export interface ArticleDetailsDto{

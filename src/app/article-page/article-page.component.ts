@@ -63,11 +63,11 @@ export class ArticlePageComponent {
     }
 
     showArticleDetails(article: ArticleDto) {
-        const articleDetails = this.articleService.loadArticleDetails(article.articleId);
-        if(articleDetails !== undefined && articleDetails !== null && this.detailsDialog) {
-            this.detailsDialog.articleDetailsDto = articleDetails;
-            this.showArticle = true;
-        }
+        // const articleDetails = this.articleService.loadArticleDetails(article.articleId);
+        // if(articleDetails !== undefined && articleDetails !== null && this.detailsDialog) {
+        //     this.detailsDialog.articleDetailsDto = articleDetails;
+        //     this.showArticle = true;
+        // }
     }
 
     closeArticleDetails() {

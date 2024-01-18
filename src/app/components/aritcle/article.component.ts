@@ -24,12 +24,12 @@ export class ArticleComponent {
     // }
 
     public name() {
-        return this.checkDto() ? this.article.names.at(0) : "Fallback-article";
+        return this.checkDto() ? this.article.name : "Fallback-article";
     }
 
     public image() {
         if(this.checkDto()){
-            const path = this.article.images.at(0)?.path
+            const path = this.article.thumbnail
             if(path) {
                 return path;
             }
